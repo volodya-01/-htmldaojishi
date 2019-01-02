@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function MinutesTest() {
+      var sdate1 = new Date();
+t1=sdate1.getHours()*3600+sdate1.getMinutes()*60+sdate1.getSeconds();
+alert(t1)
+      sdate1.setMinutes(sdate1.getMinutes() + 60);
+t2=sdate1.getHours()*60*60;
+alert(t2)
+      var now = sdate1.getHours() + ":" + sdate1.getMinutes();
+      var t=t2-t1;
+      alert(t)
+      alert(now)
+      return now;
+    }
+MinutesTest()
+  </script>
+</body>
+
+</html>

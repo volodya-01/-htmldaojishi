@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <title>倒计时</title>
+</head>
+
+<body>
+    <div id="msg"></div>
+</body>
+
+</html>
+<script language="javascript">
+    var tc = 1200; //20分钟
+    function setTimerCount() {
+        window.setInterval(function () {
+            if (tc == 1)
+                tc = 1200;
+            else
+                tc--;
+            document.getElementById("msg").innerHTML = "还剩" + tc + "秒";
+        }, 1000); //每秒刷新
+    }
+
+    setTimerCount();
+</script>
+
+</html>

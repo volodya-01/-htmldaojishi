@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>限时抢购</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            daojishi();
+        }
+
+        function daojishi() {
+            var curr_time = new Date();
+            var end_time = new Date("2019/9/12,12:30:50");
+
+            var left_time = parseInt((end_time - curr_time) / 1000);
+           /*  var day = parseInt(left_time / (60 * 60 * 24)); */
+            var hour = parseInt(left_time / (60 * 60) % 24);
+            var min = parseInt((left_time / 60 % 60));
+            var sec = parseInt((left_time % 60));
+
+            document.getElementById('time').innerHTML = /* "剩余时间：" + day + "天" + */ hour + "小时" + min + "分钟" + sec + "秒";
+            setTimeout(daojishi, 500);
+        }
+
+        // format time;
+        function checkTime(i) {
+            if (i < 10) {
+                return "0" + i;
+            } else {
+                return i;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="time">content</div>
+</body>
+
+</html>

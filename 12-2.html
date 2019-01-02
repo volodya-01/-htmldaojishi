@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>抢时限</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+        /*div{width: 200px;height: 200px;background-color: #D4BEBE}*/
+    </style>
+    <script type="text/javascript">
+//抢时限
+        window.onload = function () {
+            showTime();
+        };
+
+        function showTime() {
+            var a = new Date();
+            var b = new Date("2016/6/7,12:20:12");
+            var lefttime = parseInt((b.getTime() - a.getTime()) / 1000); //秒
+            var d = parseInt(lefttime / (24 * 60 * 60)); //天
+            var h = parseInt(lefttime / (60 * 60) % 24); //时
+            var m = parseInt(lefttime / 60 % 60);
+            var s = parseInt(lefttime % 60);
+            document.getElementById('show').innerHTML = d + '天' + h + '小时' + m + '分' + s + '秒';
+            setInterval(showTime, 500);
+
+        }
+    </script>
+</head>
+
+<body> 倒计时<span id="show"></span>天 </body>
+
+</html>

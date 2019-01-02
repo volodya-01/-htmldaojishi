@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>当前时间</title>
+</head>
+<script type="text/javascript">
+  window.onload = function () {
+    showTime();
+  }
+
+  // show current time;
+  function showTime() {
+    var myDate = new Date();
+    var year = myDate.getFullYear();
+    var month = myDate.getMonth() + 1;
+    var day = myDate.getDate();
+    var week = myDate.getDay();
+    var weeks = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+
+    var hour = checkTime(myDate.getHours());
+var hour1 = checkTime(myDate.getHours())+1;
+    alert(hour1)
+    var minute = checkTime(myDate.getMinutes());
+    var second = checkTime(myDate.getSeconds());
+
+    document.getElementById('showtime').innerHTML = year + "年" + month + "月" + day + "日 " + weeks[week] +
+      " " + hour + ":" + minute + ":" + second;
+    setTimeout(showTime, 1000);
+  }
+
+  // format time;
+  function checkTime(i) {
+    if (i < 10) {
+      return "0" + i;
+    } else {
+      return i;
+    }
+  }
+
+</script>
+
+<body>
+  <div id="showtime"> showtime </div>
+</body>
+
+</html>

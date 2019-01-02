@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>模仿淘宝聚划算倒计时js,兼容各种浏览器</title>
+</head>
+
+<body>
+    <font id="countdowns"></font>
+
+</body>
+<script type="text/javascript">
+    function countdown() {
+        var endtime = new Date("2016/8/10,12:20:00");
+        var nowtime = new Date();
+        var leftsecond = parseInt((endtime.getTime() - nowtime.getTime()) / 1000);
+        _d = parseInt(leftsecond / 3600 / 24);
+        _h = parseInt((leftsecond / 3600) % 24);
+        _m = parseInt((leftsecond / 60) % 60);
+        _s = parseInt(leftsecond % 60);
+        var _ms = ((nowtime.getMilliseconds()) / 100);
+
+        document.getElementById("countdowns").innerHTML = "还剩: " + _d + "天" + _h + "小时" + _m + "分" + _s + "." +
+            change2ms(Math.round(_ms)) + "秒";
+        // console.log(__d+"天 "+__h+"小时"+__m+"分"+__s+"."+aaa(Math.round(q))+"秒")
+    }
+    countdown()
+    var sh;
+    sh = setInterval(countdown, 100);
+
+    function change2ms(e) {
+        if (e == 10) {
+            return 9
+        }
+        if (e == 9) {
+            return 0
+        }
+        if (e == 8) {
+            return 1
+        }
+        if (e == 7) {
+            return 2
+        }
+        if (e == 6) {
+            return 3
+        }
+        if (e == 5) {
+            return 4
+        }
+        if (e == 4) {
+            return 5
+        }
+        if (e == 3) {
+            return 6
+        }
+        if (e == 2) {
+            return 7
+        }
+        if (e == 1) {
+            return 8
+        }
+        return 9;
+    }
+</script>
+
+</html>

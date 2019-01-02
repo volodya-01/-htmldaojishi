@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>显示时间</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: #D4BEBE
+        }
+    </style>
+    <script type="text/javascript">
+//显示时间
+        window.onload = function () {
+            showTime();
+        };
+
+        function check(i) {
+            if (i < 10) {
+                return '0' + i;
+            } else {
+                return i;
+            }
+        }
+
+        function showTime() {
+            var myDate = new Date();
+            var year = myDate.getFullYear();
+            var month = myDate.getMonth() + 1;
+            var date = myDate.getDate(); //日
+            var w = myDate.getDay(); //星期
+            var h = myDate.getHours();
+            var m = myDate.getMinutes();
+            var s = myDate.getSeconds();
+            var week = new Array(7);
+            m = check(m);
+            h = check(h);
+            s = check(s);
+            week[0] = "星期日";
+            week[1] = "星期一";
+            week[2] = "星期二";
+            week[3] = "星期三";
+            week[4] = "星期四";
+            week[5] = "星期五";
+            week[6] = "星期六";
+            document.getElementById('show').innerHTML = year + '年' + month + '月' + date + '日' + week[w] + h + ':' + m +
+                ':' + s;
+            setTimeout(showTime, 500);
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="show">显示时间的位置</div>
+</body>
+
+</html>
+---------------------
+作者：ohayhay
+来源：CSDN
+原文：https://blog.csdn.net/oHayHay/article/details/51901636?utm_source=copy
+版权声明：本文为博主原创文章，转载请附上博文链接！

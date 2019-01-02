@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>倒计时</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+        /*div{width: 200px;height: 200px;background-color: #D4BEBE}*/
+    </style>
+    <script type="text/javascript">
+//倒计时天数
+        window.onload = function () {
+            var a = new Date();
+            var b = new Date("2016,6,7");
+            var lefttime = Math.ceil((b.getTime() - a.getTime()) / (24 * 60 * 60 * 1000));
+            document.getElementById('show').innerHTML = lefttime;
+        };
+    </script>
+</head>
+
+<body> 倒计时<span id="show"></span>天 </body>
+
+</html>
